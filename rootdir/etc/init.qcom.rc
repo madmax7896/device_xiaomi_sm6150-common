@@ -55,6 +55,10 @@ on init
     chown root system /sys/fs/cgroup/memory/bg/tasks
     chmod 0660 /sys/fs/cgroup/memory/bg/tasks
 
+    # Change ownership of kernelspace battery saver node
+    chown system system /sys/module/battery_saver/parameters/enabled
+    chmod 0664 /sys/module/battery_saver/parameters/enabled
+
 on late-init
     # Start services for bootanim
     start surfaceflinger
